@@ -1,0 +1,19 @@
+
+<div class="item">
+  <div class="question">
+    <%= @ask %>
+  </div>
+  <div class="answer">
+    <% if @ask == "I am going to work" %>
+      <%= @answer[1][:answer] %>
+    <% elsif @ask.include?("?") %>
+      <%= @answer[2][:answer] %>
+    <% else %>
+      <%= @answer[3][:answer] %>
+    <% end%>
+  </div>
+</div>
+
+<div class="back">
+  <%= link_to "Ask a new question", "/ask" %>
+</div>
